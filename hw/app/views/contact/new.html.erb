@@ -1,0 +1,7 @@
+<%= form_tag contact_submitted_path, :method => :post do %>
+	<div>First Name</div>
+	<%= text_field_tag :first_name %>
+	<div>Last Name</div>
+	<%= text_field_tag :last_name %>
+	<%= submit_tag 'submit' %>
+<% end %>
