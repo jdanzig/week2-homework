@@ -1,0 +1,6 @@
+<h1>Welcome to Rock, Paper, Scissors! Pick one:</h1>
+<ul>
+  <li><%= link_to 'Rock', rps_outcome_path(:weapon => 'rock'), :method => :post %></li>
+  <li><%= link_to 'Paper', rps_outcome_path(:weapon => 'paper'), :method => :post %></li>
+  <li><%= link_to 'Scissors', rps_outcome_path(:weapon => 'scissors'), :method => :post %></li>
+</ul>
