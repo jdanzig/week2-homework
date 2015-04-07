@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dice/roll'
+
   get :greet, :to => 'greet#index'
   
   get :contact, :to => 'contact#new'
