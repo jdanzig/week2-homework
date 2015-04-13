@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'dice/roll'
+  get :dice, :to => 'dice#intro'
+  get "dice/roll"
 
   get :greet, :to => 'greet#index'
   

@@ -1,2 +1,21 @@
-<h1>Dice#roll</h1>
-<p>Find me in app/views/dice/roll.html.erb</p>
+<h1>Dice Game</h1>
+
+<%= image_tag "http://jeffcohenonline.com/dice/#{@numbers[0]}.png" %>
+<%= image_tag "http://jeffcohenonline.com/dice/#{@numbers[1]}.png" %>
+
+<h2>You rolled a <%= @sum %></h2>
+<% if @result == :win %>
+<h3>You won!</h3>
+<%= link_to "Play Again", dice_roll_path %>
+<% elsif @result == :lose %>
+<h3>Sorry, you lost :(</h3>
+<%= link_to "Play Again", dice_roll_path %>
+<% else %>
+<h3>Your goal is <%= @goal %>.</h3>
+<h4>Try to roll your goal again before you roll a 7.</h4>
+<%= form_tag dice_roll_path, :method => :get do %>
+	<%= hidden_field_tag :roll_num, @roll_num %>
+	<%= hidden_field_tag :goal, @goal %>
+	<%= submit_tag "Roll Again" %>
+<% end %>
+<% end %>
